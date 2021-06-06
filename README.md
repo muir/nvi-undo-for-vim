@@ -15,7 +15,7 @@ function Undo()
 	else
 		" this is a subsequent typing of "u"
 		if b:undobackwards 
-			normal! 
+			redo
 		else
 			normal! u
 		endif
@@ -33,7 +33,7 @@ function Repeat()
 		if b:undobackwards 
 			normal! u
 		else
-			normal! 
+			redo
 		endif
 		let b:expectedtick = b:changedtick
 	endif
